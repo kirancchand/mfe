@@ -1,29 +1,36 @@
 const {merge}=require('webpack-merge');
+const HtmlWebpackPlugin=require('html-webpack-plugin');
 const ModuleFederationPlugin =require('webpack/lib/container/ModuleFederationPlugin');
 const commonConfig=require('./webpack.common');
 const packageJson=require('../package.json');
 const devConfig={
     mode:'development',
     output:{
-        publicPath:'http://localhost:3080/',
+        publicPath:'http://localhost:3083/',
     },
     devServer:{
-        port:3080,
+        port:3083,
         historyApiFallback:{
             index:'index.html'
+        },
+        headers:{
+            'Access-Control-Allow-Origin':'*'
         }
+        
     },
     plugins:[
         new ModuleFederationPlugin({
-            name:'container',
-            remotes:{
-                marketing:'marketing@http://localhost:3081/remoteEntry.js',
-                auth:'auth@http://localhost:3082/remoteEntry.js',
-                dashboard:'dashboard@http://localhost:3083/remoteEntry.js'
+            name:'dashboard',
+            filename:'remoteEntry.js',
+            exposes:{
+                './DashboardApp':'./src/bootstrap'
             },
             shared:packageJson.dependencies
             // ['react','react-dom'],
         }),
+        new HtmlWebpackPlugin({
+            template:'./public/index.html'
+        })
     ]
 };
 
