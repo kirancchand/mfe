@@ -11,7 +11,7 @@ const prodConfig={
     },
     plugins:[
         new ModuleFederationPlugin({
-            name:'auth',
+            name:'dashboard',
             filename:'remoteEntry.js',
             exposes:{
                 './DashboardApp':'./src/bootstrap'
@@ -22,3 +22,5 @@ const prodConfig={
 };
 
 module.exports=merge(commonConfig,prodConfig);
+
+
