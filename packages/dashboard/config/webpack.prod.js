@@ -5,6 +5,9 @@ const commonConfig=require('./webpack.common');
 
 const prodConfig={
     mode:'production',
+    optimization: {
+        runtimeChunk: false,
+    },
     output:{
         filename:'[name].[contenthash].js',
         publicPath:'/dashboard/latest/',
