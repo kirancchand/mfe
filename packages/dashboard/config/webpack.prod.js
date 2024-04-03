@@ -5,19 +5,16 @@ const commonConfig=require('./webpack.common');
 
 const prodConfig={
     mode:'production',
-    optimization: {
-        splitChunks: false,
-    },
     output:{
         filename:'[name].[contenthash].js',
-        publicPath:'/dashboard/latest/',
+        publicPath:'/marketing/latest/',
     },
     plugins:[
         new ModuleFederationPlugin({
-            name:'dashboard',
+            name:'marketing',
             filename:'remoteEntry.js',
             exposes:{
-                './DashboardApp':'./src/bootstrap'
+                './MarketingApp':'./src/bootstrap'
             },
             shared:packageJson.dependencies
         })

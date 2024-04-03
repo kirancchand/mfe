@@ -16,7 +16,7 @@
     </div>
     <div class="p-col-12 p-lg-4">
       <div class="card summary">
-        <span class="title">Revenues</span>
+        <span class="title">Revenues Revenues</span>
         <span class="detail">Income for today</span>
         <span class="count revenue">$3,200</span>
       </div>
