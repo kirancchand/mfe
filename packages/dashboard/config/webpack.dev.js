@@ -16,7 +16,6 @@ const devConfig={
         headers:{
             'Access-Control-Allow-Origin':'*'
         }
-        
     },
     plugins:[
         new ModuleFederationPlugin({
