@@ -2,15 +2,16 @@
   "name": "dashboard",
   "version": "1.0.0",
   "scripts": {
-    "start": "webpack serve --config config/webpack.dev.js",
+    "start": "webpack serve --config config/webpack.dev.js --history-api-fallback",
     "build": "webpack --config config/webpack.prod.js"
   },
   "dependencies": {
-    "chart.js": "^2.9.4",
+    "chart.js": "^3",
+    "node-sass": "^9.0.0",
     "primeflex": "^2.0.0",
     "primeicons": "^4.0.0",
-    "primevue": "^3.0.1",
-    "vue": "^3.0.0"
+    "primevue": "^3.5.0",
+    "vue": "^3.2.26"
   },
   "devDependencies": {
     "@babel/core": "^7.12.3",
@@ -21,7 +22,6 @@
     "css-loader": "^5.0.0",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^4.5.0",
-    "node-sass": "^4.14.1",
     "sass-loader": "^10.0.4",
     "style-loader": "^2.0.0",
     "vue-loader": "^16.0.0-beta.9",
