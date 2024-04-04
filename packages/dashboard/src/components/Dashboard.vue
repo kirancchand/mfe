@@ -2,21 +2,21 @@
   <div class="p-grid p-fluid dashboard">
     <div class="p-col-12 p-lg-4">
       <div class="card summary">
-        <span class="title">Users!!!!!!!</span>
+        <span class="title">Users</span>
         <span class="detail">Number of visitors</span>
         <span class="count visitors">12</span>
       </div>
     </div>
     <div class="p-col-12 p-lg-4">
       <div class="card summary">
-        <span class="title">Sales!!!!!!!</span>
-        <span class="detail">Number of purchases!!!!!!!!!!!</span>
+        <span class="title">Sales</span>
+        <span class="detail">Number of purchases</span>
         <span class="count purchases">534</span>
       </div>
     </div>
     <div class="p-col-12 p-lg-4">
       <div class="card summary">
-        <span class="title">Revenues Revenues</span>
+        <span class="title">Revenue</span>
         <span class="detail">Income for today</span>
         <span class="count revenue">$3,200</span>
       </div>
@@ -71,7 +71,7 @@
       </div>
     </div>
 
-    <!--  <div class="p-col-12 p-md-6 p-lg-4">
+    <div class="p-col-12 p-md-6 p-lg-4">
       <Panel header="Tasks" style="height: 100%">
         <ul class="task-list">
           <li>
@@ -133,7 +133,7 @@
           </div>
         </div>
       </Panel>
-    </div>-->
+    </div>
 
     <!-- <div class="p-col-12 p-lg-4 contacts">
       <Panel header="Contacts">
@@ -165,7 +165,7 @@
         </ul>
       </Panel>
     </div> -->
- <!-- 
+
     <div class="p-col-12 p-lg-4">
       <Panel header="Activity" style="height: 100%">
         <div class="activity-header">
@@ -243,7 +243,7 @@
           </Column>
         </DataTable>
       </div>
-    </div>-->
+    </div>
     <div class="p-col-12 p-lg-6">
       <div class="card">
         <Chart type="line" :data="lineData" />
