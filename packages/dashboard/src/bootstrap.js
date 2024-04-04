@@ -1,6 +1,6 @@
 import { createApp } from 'vue';
 import Dashboard from './components/Dashboard.vue';
-import Sample from './components/Sample';
+//import Sample from './components/Sample';
 import React from 'react';
 import ReactDOM from 'react-dom';
 // Mount function to start up the app
