@@ -1,5 +1,7 @@
 <template>
-  <div class="p-grid p-fluid dashboard">
+  <div>
+    <span>Users!!!!!</span>
+  <!-- <div class="p-grid p-fluid dashboard">
     <div class="p-col-12 p-lg-4">
       <div class="card summary">
         <span class="title">Users!!!!!</span>
@@ -69,9 +71,9 @@
           <span class="count">60</span>
         </div>
       </div>
-    </div>
+    </div> -->
 
-    <div class="p-col-12 p-md-6 p-lg-4">
+    <!-- <div class="p-col-12 p-md-6 p-lg-4">
       <Panel header="Tasks" style="height: 100%">
         <ul class="task-list">
           <li>
@@ -106,9 +108,9 @@
           </li>
         </ul>
       </Panel>
-    </div>
+    </div> -->
 
-    <div class="p-col-12 p-md-6 p-lg-4 p-fluid contact-form">
+    <!-- <div class="p-col-12 p-md-6 p-lg-4 p-fluid contact-form">
       <Panel header="Contact Us">
         <div class="p-grid">
           <div class="p-col-12">
@@ -133,7 +135,7 @@
           </div>
         </div>
       </Panel>
-    </div>
+    </div> -->
 
     <!-- <div class="p-col-12 p-lg-4 contacts">
       <Panel header="Contacts">
@@ -166,7 +168,7 @@
       </Panel>
     </div> -->
 
-    <div class="p-col-12 p-lg-4">
+    <!-- <div class="p-col-12 p-lg-4">
       <Panel header="Activity" style="height: 100%">
         <div class="activity-header">
           <div class="p-grid">
@@ -248,11 +250,11 @@
       <div class="card">
         <Chart type="line" :data="lineData" />
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 
-<script>
+<!-- <script>
 import 'primevue/resources/themes/saga-blue/theme.css';
 import 'primevue/resources/primevue.css';
 import 'primeflex/primeflex.css';
@@ -749,4 +751,4 @@ $footerBgColor: #ffffff;
     }
   }
 }
-</style>
+</style> -->
