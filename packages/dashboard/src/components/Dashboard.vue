@@ -10,7 +10,7 @@
     <div class="p-col-12 p-lg-4">
       <div class="card summary">
         <span class="title">Sales!!!!!!!</span>
-        <span class="detail">Number of purchases</span>
+        <span class="detail">Number of purchases!!!!!!!!!!!</span>
         <span class="count purchases">534</span>
       </div>
     </div>
