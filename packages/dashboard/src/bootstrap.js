@@ -1,10 +1,13 @@
-import { createApp } from 'vue';
-import Dashboard from './components/Dashboard.vue';
-
+// import { createApp } from 'vue';
+// import Dashboard from './components/Dashboard.vue';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Home from './components/Home';
 // Mount function to start up the app
 const mount = (el) => {
-  const app = createApp(Dashboard);
-  app.mount(el);
+  // const app = createApp(Dashboard);
+  // app.mount(el);
+  ReactDOM.render(<Home />,el);
 };
 
 // If we are in development and in isolation,
