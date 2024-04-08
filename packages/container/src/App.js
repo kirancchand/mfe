@@ -9,7 +9,9 @@ import {
 import Progress from "./components/Progress";
 import Header from './components/Header';
 import {createBrowserHistory} from 'history';
-
+import { Provider } from 'react-redux';
+import store from '../re-redux/store';
+import ReduxApp from "./components/ReduxApp";
 const MarketingLazy = lazy(()=>import ('./components/MarketingApp'));
 const AuthLazy = lazy(()=>import ('./components/AuthApp'));
 const DashboardLazy = lazy(()=>import ('./components/DashboardApp'));
@@ -45,7 +47,9 @@ export default()=>{
                         <Route path="/"><MarketingLazy/></Route>
                     </Switch>
                 </Suspense>
-               
+                <Provider store={store}>
+<                    ReduxApp/>
+                </Provider>
                 {/* <MarketingApp/>  */}
             </div>
         </StylesProvider>
