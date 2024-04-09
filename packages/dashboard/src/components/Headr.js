@@ -4,6 +4,7 @@ export default function Headr({ onClear, count }) {
     const { notificationCount } = useSelector(({ notification }) => ({
         notificationCount: notification.count,
       }));
+      // console.log(notificationCount)
   return (
     <div
       style={{

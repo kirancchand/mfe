@@ -1,5 +1,6 @@
 import { legacy_createStore as createStore, combineReducers } from 'redux';
 import notificationReducer from 'dashboard/notificationReducer';
+
 const INCREMENT = 'INCREMENT';
 const CLEAR = 'CLEAR';
 
@@ -26,7 +27,9 @@ const store = createStore(
   combineReducers({
     counter: counterReducer,
     notification: notificationReducer,
-  })
+  }),  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+
+
 );
 
 export default store;
