@@ -1,11 +1,8 @@
-// import { createStore, combineReducers } from 'redux';
-import { legacy_createStore as createStore, combineReducers } from 'redux';
-import notificationReducer from './reducer';
+import { createStore } from 'redux';
+import { wrapStore } from 'redux-micro-frontend';
+import rootReducer from './reducer';
 
-const store = createStore(
-  combineReducers({
-    notification: notificationReducer,
-  })
-);
+const store = createStore(rootReducer);
+wrapStore(store, { dispatchType: 'ACTION' });
 
 export default store;

@@ -1,20 +1,17 @@
-const INCREMENT = 'INCREMENT';
-const CLEAR = 'CLEAR';
-export const incrementCount = () => ({
-  type: INCREMENT,
-});
+const initialState = {
+  // initial state
+};
 
-export const clearCount = () => ({
-  type: CLEAR,
-});
-export default function notificationReducer(state = { count: 3 }, action) {
+const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case INCREMENT:
-      console.log("state",state)
-      return { count: state.count + 1 };
-    case CLEAR:
-      return { count: 0 };
+    case 'ACTION_TYPE_2':
+      return {
+        ...state,
+        // update state based on action payload
+      };
     default:
       return state;
   }
-}
+};
+
+export default reducer;
