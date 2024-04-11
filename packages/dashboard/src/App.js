@@ -66,6 +66,8 @@ const updateState=(globalState)=>{
             <Counter count={mystate.global} header="Global Counter" increment={incrementGlobalCounter} decrement={decrementGlobalCounter}></Counter>
             <Counter count={mystate.local} header="Local Counter" increment={incrementLocalCounter} decrement={decrementLocalCounter}></Counter>
           {/* </Provider> */}
+
+          {/* <AppCounter/> */}
         </StylesProvider>
     </div>
 }
