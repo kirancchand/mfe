@@ -1,5 +1,4 @@
 export const AddTodo = (description) => {
-    console.log(description)
     return {
         type: 'ADD_TODO',
         payload: description

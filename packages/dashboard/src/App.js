@@ -14,25 +14,21 @@ import { GlobalStore } from 'redux-micro-frontend';
 import { CounterReducer } from '../re-redux/counterReducer'
 import { IncrementLocalCounter, DecrementLocalCounter } from '../re-redux/local.actions'
 import { IncrementGlobalCounter, DecrementGlobalCounter } from '../re-redux/global.actions';
+import { createStore } from 'redux';
 const generateClassName=createGenerateClassName({
     productionPrefix:'ha'   ,
 });
 
 export default()=>{
 
-  const [mystate,setMyState]=useState({
-    local: 0,
-    global: 0,
-    todo: 0
-  })
-
-
+  const [mystate,setMyState]=useState({local: 0,global: 0,todo: 0})
   const globalStore = GlobalStore.Get(false);
-
-  const store = globalStore.CreateStore("CounterApp", CounterReducer, []);
-  globalStore.RegisterStore('CounterApp', store, [GlobalStore.AllowAll]);
+  const store = createStore(CounterReducer,  window.devToolsExtension && window.devToolsExtension());
+  // const store = globalStore.CreateStore("CounterApp", CounterReducer, []);
+  globalStore.RegisterStore('CounterApp', store);
   globalStore.RegisterGlobalActions("CounterApp", ["INCREMENT_GLOBAL", "DECREMENT_GLOBAL", "ADD_TODO", "REMOVE_TODO"]);
   globalStore.SubscribeToGlobalState("CounterApp", updateState)
+
 
 const incrementLocalCounter=()=>{
   globalStore.DispatchAction("CounterApp", IncrementLocalCounter());
@@ -50,7 +46,8 @@ const decrementGlobalCounter=()=>{
     globalStore.DispatchAction("CounterApp", DecrementGlobalCounter());
 }
 
-const updateState=(globalState)=>{
+function updateState(globalState){
+
   setMyState({
       local: globalState.CounterApp.local,
       global: globalState.CounterApp.global,

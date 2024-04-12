@@ -13,11 +13,14 @@ function TodoList(){
 		globalCounter: 0,
 	});
     const globalStore = GlobalStore.Get();
-    const store = createStore(TodoReducer,  window.devToolsExtension && window.devToolsExtension());
+    const store = createStore(TodoReducer); 
 	globalStore.RegisterStore('TodoApp', store, [GlobalStore.AllowAll]);
+
+
     const counterChanged = (counterState) => {
-		console.log("GGGGGGG");
+		console.log("counterState",globalStore.GetGlobalState())
 		setState({
+			todos:globalStore.GetGlobalState().TodoApp,
 			globalCounter: counterState.global,
 		});
 	};
@@ -28,12 +31,25 @@ function TodoList(){
 		//Since
 	}
 
+
+
+
+
 	const stateChanged = (todoState) => {
-		console.log("stateChanged",todoState)
-		setState({todos: todoState});
+		console.log("stateChanged",state)
+		let newState={
+			todos:todoState,
+			globalCounter:state.globalCounter
+		}
+		console.log("newState",newState)
+		// setState({todos: todoState});
+		setState(newState)
 	};
 
 	globalStore.Subscribe('TodoApp', stateChanged);
+
+
+
 
 	const addTodo = (description) => {
 		globalStore.DispatchAction('TodoApp', AddTodo(description));
@@ -42,12 +58,17 @@ function TodoList(){
 	const removeTodo = (todoId) => {
 		globalStore.DispatchAction('TodoApp', RemoveTodo(todoId));
 	};
+
+	
+
     return (
+		console.log(state),
 		<div>
 			<AddtoDoCom addTodo={(ev)=>addTodo(ev)}/>
 			<h2>Todos</h2>
 			<ul>
-				{state.todos.map((todo,i) => {
+				{
+				state.todos!==undefined&&state.todos.length>0&&state.todos.map((todo,i) => {
 					return (
 						<li key={i}>
 							<Todo
