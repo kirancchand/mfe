@@ -10,7 +10,7 @@ import Progress from "./components/Progress";
 import Header from './components/Header';
 import {createBrowserHistory} from 'history';
 import { Provider } from 'react-redux';
-// import store from '../re-redux/store';
+import store from '../re-redux/store';
 import TodoList from '../src/components/TodoList';
 const MarketingLazy = lazy(()=>import ('./components/MarketingApp'));
 const AuthLazy = lazy(()=>import ('./components/AuthApp'));
@@ -34,6 +34,7 @@ export default()=>{
     // <BrowserRouter>
     <Router history={history}>
         <StylesProvider generateClassName={generateClassName}>
+              <Provider store={store}>
             <div>
                 <Header onSignOut ={()=>setIsSignedIn(false)} isSignedIn={isSignedIn}/>
                 <Suspense fallback={<Progress/>}>
@@ -54,6 +55,7 @@ export default()=>{
 
                 <TodoList/>
             </div>
+             </Provider>
         </StylesProvider>
     </Router>
     //  </BrowserRouter>

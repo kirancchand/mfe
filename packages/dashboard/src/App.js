@@ -8,10 +8,10 @@ import {
 import Home from "./components/Home";
 import Counter from "./components/counter";
 import { Provider } from 'react-redux';
-// import store from '../re-redux/store';
-import { useSelector } from 'react-redux';
+import store from '../re-redux/store';
+import { useSelector,useDispatch } from 'react-redux';
 import { GlobalStore } from 'redux-micro-frontend';
-import { CounterReducer } from '../re-redux/counterReducer'
+import CounterReducer  from '../re-redux/counterReducer'
 import { IncrementLocalCounter, DecrementLocalCounter } from '../re-redux/local.actions'
 import { IncrementGlobalCounter, DecrementGlobalCounter } from '../re-redux/global.actions';
 import { createStore } from 'redux';
@@ -20,10 +20,10 @@ const generateClassName=createGenerateClassName({
 });
 
 export default()=>{
-
+ 
   const [mystate,setMyState]=useState({local: 0,global: 0,todo: 0})
   const globalStore = GlobalStore.Get(false);
-  const store = createStore(CounterReducer,  window.devToolsExtension && window.devToolsExtension());
+  // const store = createStore(CounterReducer,  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
   // const store = globalStore.CreateStore("CounterApp", CounterReducer, []);
   globalStore.RegisterStore('CounterApp', store);
   globalStore.RegisterGlobalActions("CounterApp", ["INCREMENT_GLOBAL", "DECREMENT_GLOBAL", "ADD_TODO", "REMOVE_TODO"]);
@@ -43,7 +43,7 @@ const incrementGlobalCounter=()=>{
 }
 
 const decrementGlobalCounter=()=>{
-    globalStore.DispatchAction("CounterApp", DecrementGlobalCounter());
+  globalStore.DispatchAction("CounterApp", DecrementGlobalCounter());
 }
 
 function updateState(globalState){
@@ -56,13 +56,15 @@ function updateState(globalState){
 }
 
 
+
     return <div>
         <StylesProvider generateClassName={generateClassName}>
-          {/* <Provider store={store}> */}
+          <Provider store={store}>
+          
             {/* <Home/> */}
             <Counter count={mystate.global} header="Global Counter" increment={incrementGlobalCounter} decrement={decrementGlobalCounter}></Counter>
             <Counter count={mystate.local} header="Local Counter" increment={incrementLocalCounter} decrement={decrementLocalCounter}></Counter>
-          {/* </Provider> */}
+          </Provider>
 
           {/* <AppCounter/> */}
         </StylesProvider>

@@ -1,8 +1,6 @@
-import { createStore } from 'redux';
-import { wrapStore } from 'redux-micro-frontend';
-import rootReducer from './reducer';
+import {  legacy_createStore as createStore  } from 'redux';
+import CounterReducer from './counterReducer';
 
-const store = createStore(rootReducer);
-wrapStore(store, { dispatchType: 'ACTION' });
+const store = createStore(CounterReducer,window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
 export default store;
