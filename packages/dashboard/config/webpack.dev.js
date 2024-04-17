@@ -22,7 +22,7 @@ const devConfig={
                 './DashboardApp':'./src/bootstrap',
                 // './notificationReducer':'./re-redux/reducer',
                 // './Headr':'./src/components/Headr'
-                // './CounterReducer':'./re-redux/counterReducer'
+                './CounterReducer':'./re-redux/counterReducer'
             },
             shared:packageJson.dependencies
             // ['react','react-dom'],

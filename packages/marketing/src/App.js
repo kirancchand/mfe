@@ -6,7 +6,9 @@ import {
 } from '@material-ui/core/styles';
 import Landing from './components/Landing';
 import Pricing from './components/Pricing';
-
+import { Provider } from 'react-redux';
+import store from '../re-redux/store';
+import TodoList from '../src/components/TodoList';
 const generateClassName=createGenerateClassName({
     productionPrefix:'ma'   ,
 });
@@ -14,12 +16,15 @@ const generateClassName=createGenerateClassName({
 export default({history})=>{
     return <div>
         <StylesProvider generateClassName={generateClassName}>
-            <Router history={history}>
-                <Switch>
-                    <Route exact path="/pricing" component={Pricing}/>
-                    <Route path="/" component={Landing}/>
-                </Switch>
-            </Router>
+            <Provider store={store}>
+               <TodoList/>
+                <Router history={history}>
+                    <Switch>
+                        <Route exact path="/pricing" component={Pricing}/>
+                        <Route path="/" component={Landing}/>
+                    </Switch>
+                </Router>
+            </Provider>
         </StylesProvider>
     </div>
 }

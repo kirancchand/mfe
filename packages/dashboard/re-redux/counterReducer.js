@@ -9,7 +9,7 @@ produce(state,draft  => {
     switch(action.type){
         case 'INCREMENT_GLOBAL':
             draft.global=state.global + 1
-            console.log(draft)
+            // console.log(draft)
             break;
         case 'DECREMENT_GLOBAL':
             draft.global=state.global - 1

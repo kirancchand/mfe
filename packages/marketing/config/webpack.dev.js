@@ -19,7 +19,8 @@ const devConfig={
             name:'marketing',
             filename:'remoteEntry.js',
             exposes:{
-                './MarketingApp':'./src/bootstrap'
+                './MarketingApp':'./src/bootstrap',
+                './TodoReducer':'./re-redux/todoReducer'
             },
             shared:packageJson.dependencies
             // ['react','react-dom'],

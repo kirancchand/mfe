@@ -10,7 +10,7 @@ function TodoList(){
 		todos: [],
 		globalCounter: 0,
 	});
-	// const dispatch = useDispatch();
+	const dispatch = useDispatch();
 
     const globalStore = GlobalStore.Get();
     // const store = createStore(TodoReducer,window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()); 
