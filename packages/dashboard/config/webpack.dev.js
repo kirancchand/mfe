@@ -19,7 +19,10 @@ const devConfig={
             name:'dashboard',
             filename:'remoteEntry.js',
             exposes:{
-                './DashboardApp':'./src/bootstrap'
+                './DashboardApp':'./src/bootstrap',
+                // './notificationReducer':'./re-redux/reducer',
+                // './Headr':'./src/components/Headr'
+                // './CounterReducer':'./re-redux/counterReducer'
             },
             shared:packageJson.dependencies
             // ['react','react-dom'],

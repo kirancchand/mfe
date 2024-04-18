@@ -6,7 +6,7 @@ import Home from './components/Home';
 const mount = (el) => {
   // const app = createApp(Dashboard);
   // app.mount(el);
-  ReactDOM.render(<Home/>,el);
+  ReactDOM.render(<App/>,el);
 };
 
 ///dev
