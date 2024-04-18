@@ -6,10 +6,7 @@ import store from '../../re-redux/store';
 import AddtoDoCom from './AddtoDoCom';
 import { AddTodo, RemoveTodo } from '../../re-redux/todo.actions';
 function TodoList(){
-    const [state, setState] = useState({
-		todos: [],
-		globalCounter: 0,
-	});
+    
 	const dispatch = useDispatch();
 
     const globalStore = GlobalStore.Get();
@@ -21,7 +18,10 @@ function TodoList(){
 	console.log("get from local redux",localRedux)
 	console.log("get from global redux",globalRedux)
 	globalStore.RegisterStore('TodoApp', store, [GlobalStore.AllowAll]);
-
+	const [state, setState] = useState({
+		todos: localRedux!==undefined?localRedux.data:[],
+		globalCounter: globalRedux!==undefined?globalRedux.global:0,
+	});
 
     const counterChanged = (counterState) => {
 		// console.log("counterState",globalStore.GetGlobalState())
@@ -90,6 +90,7 @@ function TodoList(){
 			<div>Local Conventional Redux value: {localReduxConventional.toString()}</div>
 			<div>Local Redux: {localRedux.toString()}</div> */}
 			{/* <div>Global Conventional Value: {newGlobal}</div> */}
+			<div>Global Redux value: {globalRedux!==undefined?globalRedux.global:""}</div>
 		</div>
 	);
 
