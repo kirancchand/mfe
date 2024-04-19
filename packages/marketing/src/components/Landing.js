@@ -71,6 +71,9 @@ export default function Album() {
       <main>
         {/* Hero unit */}
         <div className={classes.heroContent}>
+        <div style={{border:"1px solid #000",height:"200px"}}>
+vbvg
+        </div>
           <Container maxWidth="sm">
             <Typography
               component="h1"
@@ -121,6 +124,7 @@ export default function Album() {
             </div>
           </Container>
         </div>
+    
         <Container className={classes.cardGrid} maxWidth="md">
           {/* End hero unit */}
           <Grid container spacing={4}>
