@@ -10,7 +10,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import MaterialLink from '@material-ui/core/Link';
 import { Link } from 'react-router-dom';
-
+import LandingHome from './LandingHome';
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
@@ -71,9 +71,7 @@ export default function Album() {
       <main>
         {/* Hero unit */}
         <div className={classes.heroContent}>
-        <div style={{border:"1px solid #000",height:"200px"}}>
-vbvg
-        </div>
+          <LandingHome></LandingHome>
           <Container maxWidth="sm">
             <Typography
               component="h1"
